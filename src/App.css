@@ -1,0 +1,42 @@
+.App {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .category-section {
+    margin: 20px 0;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .product-item {
+    width: 150px;
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .product-item:hover {
+    opacity: 0.7;
+  }
+  
+  .product-detail {
+    margin-top: 20px;
+  }
+  
+  .product-large-image {
+    width: 300px;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
