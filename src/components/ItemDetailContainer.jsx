@@ -11,15 +11,15 @@ function ItemDetailContainer() {
       const fetchProduct = new Promise((resolve) => {
         setTimeout(() => {
           const allProducts = [
-            { id: 1, name: 'Blusa negra', category: 'camisas' },
-            { id: 2, name: 'Blusa blanca', category: 'camisas' },
-            { id: 3, name: 'Jeans', category: 'pantalones' },
-            { id: 4, name: 'Oferta Buzo', category: 'sale' }
+            { id: 1, name: 'Blusa negra', category: 'camisas', image:'images' , price: 10990 },
+            { id: 2, name: 'Blusa blanca', category: 'camisas', image: '/images/blusa-blanca.webp', price: 22990 },
+            { id: 3, name: 'Jeans', category: 'pantalones', image: '/images/jeans.webp', price: 18990 },
+            { id: 4, name: 'Oferta Buzo', category: 'sale', image: '/images/pantalon-de-buzo.webp', price: 9990 }
           ];
   
           const selectedProduct = allProducts.find(product => product.id === parseInt(id));
           resolve(selectedProduct);
-        }, 2000); // Retardo de 2 segundos
+        }, 2000);
       });
       fetchProduct.then((data) => {
         setProduct(data);

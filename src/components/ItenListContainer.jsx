@@ -7,7 +7,7 @@ function ItemListContainer () {
   const { categoryId } = useParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const message = "¡Bienvenido a nuestra tienda online!";
+  const message = "¡Bienvenida a nuestra tienda online!";
 
   // Productos
   const fetchProducts = new Promise((resolve) => {
