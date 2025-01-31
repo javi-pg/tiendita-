@@ -7,16 +7,15 @@ function ItemListContainer () {
   const { categoryId } = useParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const message = "¡Bienvenida a nuestra tienda online!";
 
   // Productos
   const fetchProducts = new Promise((resolve) => {
   setTimeout(() => {
     const allProducts = [
-    { id: 1, name: 'Blusa negra', category: 'camisas', image:'/images/blusa-negra.webp' , price: 10990 },
-    { id: 2, name: 'Blusa blanca', category: 'camisas', image: '/images/blusa-blanca.webp', price: 22990 },
-    { id: 3, name: 'Jeans', category: 'pantalones', image: '/images/jeans.webp', price: 18990 },
-    { id: 4, name: 'Oferta Buzo', category: 'sale', image: '/images/pantalon-de-buzo.webp', price: 9990 }
+      { id: 1, name: 'Blusa negra', category: 'camisas', image: 'blusa-negra.webp', price: 10990, stock: 10 },
+      { id: 2, name: 'Blusa blanca', category: 'camisas', image: 'blusa-blanca.webp', price: 22990, stock: 5 },
+      { id: 3, name: 'Jeans', category: 'pantalones', image: 'jeans.webp', price: 18990, stock: 6 },
+      { id: 4, name: '¡¡Oferta!!: Buzo', category: 'sale', image: 'pantalon-de-buzo.webp', price: 9990, stock: 8 }
   ];
   const filteredProducts = categoryId ? allProducts.filter(product => product.category === categoryId) : allProducts;
   resolve(filteredProducts);
@@ -30,7 +29,6 @@ setLoading(false);
     return (
     <div className='ItemListContainer'>
       <div>
-      <h2>{message}</h2>
       <Boton color="Red" label="SALE hasta 70%!" onClick ={()=>alert ("busca la sección SALE")}/>
       <h3>Productos {categoryId ? `de la categoría: ${categoryId}` : 'disponibles'}</h3>
     </div>

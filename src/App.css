@@ -10,33 +10,38 @@
   .product-list {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
     justify-content: space-around;
   }
   
-  .product-item {
-    width: 150px;
-    margin: 10px;
-    cursor: pointer;
+  .product-card {
+    width: 250px;
+    height: auto; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
     text-align: center;
+    padding: 10px;
+    background-color: white;
   }
   
+  .product-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-card h3, .product-card p {
+    margin: 10px 0;
+    color: #333; 
+  }
+  
+  .product-card p {
+    font-size: 14px;
+    color: #555;
+  }  
   .product-image {
     width: 100%;
     height: auto;
     border-radius: 8px;
   }
   
-  .product-item:hover {
-    opacity: 0.7;
-  }
-  
-  .product-detail {
-    margin-top: 20px;
-  }
-  
-  .product-large-image {
-    width: 300px;
-    height: auto;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-  }

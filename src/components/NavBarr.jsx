@@ -12,7 +12,7 @@ function NavBar() {
     return (
       <Navbar fixed='top' expand="lg" className="bg-body-tertiary">
         <Container fluid>
-          <Navbar.Brand as={Link}>TelaVendo</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">TelaVendo</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -20,7 +20,7 @@ function NavBar() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link as={Link}>Inicio</Nav.Link>
+              <Nav.Link as={Link} to= "/">Inicio</Nav.Link>
               <NavDropdown title="Mujer" id="navbarScrollingDropdown">
                 <NavDropdown.Item as ={Link} to="/category/camisas">Camisas</NavDropdown.Item>
                 <NavDropdown.Item as ={Link} to="/category/pantalones">Pantalones</NavDropdown.Item>
