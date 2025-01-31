@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 function ItemDetailContainer() {
     const { id } = useParams();
@@ -8,23 +9,19 @@ function ItemDetailContainer() {
     const [loading, setLoading] = useState(true);
   
     useEffect(() => {
-      const fetchProduct = new Promise((resolve) => {
-        setTimeout(() => {
-          const allProducts = [
-            { id: 1, name: 'Blusa negra', category: 'camisas', image: 'blusa-negra.webp' ,price: 10990, stock: 10 },
-            { id: 2, name: 'Blusa blanca', category: 'camisas', image: 'blusa-blanca.webp', price: 22990, stock: 5 },
-            { id: 3, name: 'Jeans', category: 'pantalones', image: 'jeans.webp', price: 18990, stock: 6 },
-            { id: 4, name: '¡¡Oferta!!: Buzo', category: 'sale', image: 'pantalon-de-buzo.webp', price: 9990, stock: 8 }
-          ];
-  
-          const selectedProduct = allProducts.find(product => product.id === parseInt(id));
-          resolve(selectedProduct);
-        }, 2000);
-      });
-      fetchProduct.then((data) => {
-        setProduct(data);
-        setLoading(false);
-      });
+      const db = getFirestore();
+      const itemRef = doc(db, "Items", id);
+
+      getDoc(itemRef)
+        .then((docSnap) => {
+          if (docSnap.exists()) {
+            setProduct({ id: docSnap.id, ...docSnap.data() });
+          } else {
+            console.error("No such document!");
+          }
+        })
+        .catch((error) => console.error("Error getting document:", error))
+        .finally(() => setLoading(false));
     }, [id]);
   
     return (

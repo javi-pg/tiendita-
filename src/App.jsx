@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBarr';
-import ItemListContainer from './components/ItenListContainer';
+import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Error from './components/Error';
 import { CartProvider } from './context/Cartcontext';
