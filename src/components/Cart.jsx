@@ -21,7 +21,8 @@ const Cart = () => {
             </div>
           ))}
           <h3>Total: ${totalPrice}</h3>
-          <button onClick={clearCart}>Vaciar Carrito</button>
+          <button onClick={clearCart}> Vaciar Carrito </button>
+          <button onClick={clearCart}> Comprar </button>
         </>
       )}
     </div>
